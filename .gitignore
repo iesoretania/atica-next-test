@@ -57,6 +57,7 @@ node_modules
 
 # Assets and user uploads
 /web/bundles/
+/web/vendor/
 /web/uploads/
 
 # Build data
