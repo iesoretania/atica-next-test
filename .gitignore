@@ -59,10 +59,6 @@ node_modules
 /web/bundles/
 /web/uploads/
 
-# PHPUnit
-/app/phpunit.xml
-/phpunit.xml
-
 # Build data
 /build/
 
