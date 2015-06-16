@@ -1,0 +1,71 @@
+requires:
+    less: gulp-less
+    concat: gulp-concat
+    uglify: gulp-uglify
+    freeze: gulp-freeze
+mimetypes:
+    css:
+        # In 'prod' mode, use these settings
+        prod:
+            outputFolder: web/dist/css  # The output folder for your saving your compiled files
+            webPath:      /dist/css     # The web path for the compiled files
+            # Run these tasks on your compiled files
+            tasks:
+                - { name: less }
+                - { name: minify }
+                - { name: concat, args: '%filename%' }
+            htmlTag: '<link rel="stylesheet" type="text/css" href="{{ asset("%path%") }}">' # custom html tag
+        dev:
+            outputFolder: web/tmp/css
+            webPath:      /tmp/css
+            tasks:
+                - { name: less }
+        # This is the list of source files to apply the above settings
+        files:
+            frontend.css: # This is the output filename
+                - assets/vendor/bootstrap/less/bootstrap.less
+                - assets/vendor/fontawesome/css/font-awesome.css
+            #backend.css:
+            #    - assets/vendor/bootstrap-daterangepicker/daterangepicker-bs3.css
+            #    - assets/css/backend.css
+
+        # Watch these files for changes (optional)
+        watch:
+            - assets/**/*.less
+            - assets/**/*.css
+
+    js:
+        dev:
+            outputFolder: web/tmp/js
+            webPath:      /tmp/js
+            tasks: []
+        prod:
+            outputFolder: web/dist/js
+            webPath:      /dist/js
+            tasks:
+                # This task concats all the files into one
+                - { name: concat, args: '%filename%' }
+                # This task minifies the scripts
+                - { name: uglify, args: { mangle: false } }
+                # This is a cache busting gulp plugin that appends
+                #  an md5 of the contents to the filename
+                - { name: freeze }
+        files:
+            bootstrap.js:
+                - assets/vendor/bootstrap/js/alert.js
+                - assets/vendor/bootstrap/js/button.js
+                - assets/vendor/bootstrap/js/carousel.js
+                - assets/vendor/bootstrap/js/dropdown.js
+                - assets/vendor/bootstrap/js/modal.js
+                - assets/vendor/bootstrap/js/collapse.js
+                - assets/vendor/bootstrap/js/tooltip.js
+                - assets/vendor/bootstrap/js/popover.js
+                - assets/vendor/bootstrap/js/transition.js
+                - vendor/mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/public/js/mopabootstrap-collection.js
+                - vendor/lifo/typeahead-bundle/Lifo/TypeaheadBundle/Resources/public/js/typeaheadbundle.js
+
+replacementPaths:
+    - src/**/*.html.twig
+
+default:
+    - css

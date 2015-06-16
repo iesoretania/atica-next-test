@@ -57,8 +57,8 @@ node_modules
 
 # Assets and user uploads
 /web/bundles/
-/web/vendor/
 /web/uploads/
+/assets/vendor/
 
 # Build data
 /build/
@@ -74,6 +74,3 @@ vendor/
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
-
-# Componentes instalados por Bower
-src/AppBundle/Resources/public/vendor
