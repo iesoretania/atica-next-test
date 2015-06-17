@@ -1,6 +1,7 @@
 {
-    "name": "usuario/atica.nex",
-    "license": "proprietary",
+    "name": "iesoretania/atica-next",
+    "description": "Aplicación web para facilitar ciertos aspectos de la gestión de un centro educativo",
+    "license": "AGPL-3.0",
     "type": "project",
     "autoload": {
         "psr-4": {
