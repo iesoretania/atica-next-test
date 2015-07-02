@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Craue\FormFlowBundle\CraueFormFlowBundle(),
             new AppBundle\AppBundle(),
         );
 
