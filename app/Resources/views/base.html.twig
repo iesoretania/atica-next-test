@@ -9,18 +9,19 @@
 {% endblock head_script %}
 {% block title %}ÁTICA{% endblock %}
 {% block head_style %}
-    {% stylesheets filter='cssrewrite'
-        'bundles/mopabootstrap/bootstrap/dist/css/bootstrap.min.css'
+    {% stylesheets filter='scssphp' output='compiled/css/app.css'
+        'bundles/mopabootstrap/bootstrap/dist/css/bootstrap.css'
+        'vendor/font-awesome/css/font-awesome.css'
         'vendor/select2/dist/css/select2.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock head_style %}
 {% block foot_script_assetic %}
-    {% javascripts
-        'vendor/jquery/jquery.min.js'
-        'bundles/mopabootstrap/bootstrap/docs/assets/js/vendor/autoprefixer.js'
+    <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    {% javascripts filter="jsqueeze" output='compiled/js/app.js'
         'vendor/select2/dist/js/select2.js'
+        'vendor/select2/dist/js/i18n/es.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}

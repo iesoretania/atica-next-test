@@ -80,5 +80,4 @@ web/bundles
 web/vendor
 
 # Recursos compilados vía assetic
-web/css
-web/js
+web/compiled/
