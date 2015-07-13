@@ -28,6 +28,7 @@
         "knplabs/knp-paginator-bundle": "~2",
         "knplabs/knp-menu-bundle": "~2",
         "leafo/scssphp": "^0.1.7",
+        "oyejorge/less.php": "~1.5",
         "patchwork/jsqueeze": "~1.0",
         "components/font-awesome": "^4.3"
     },

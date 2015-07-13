@@ -9,8 +9,8 @@
 {% endblock head_script %}
 {% block title %}ÁTICA{% endblock %}
 {% block head_style %}
-    {% stylesheets filter='scssphp' output='compiled/css/app.css'
-        'bundles/mopabootstrap/bootstrap/dist/css/bootstrap.css'
+    {% stylesheets filter='cssrewrite,lessphp,scssphp' output='compiled/css/app.css'
+        'bundles/app/less/atica.less'
         'vendor/font-awesome/css/font-awesome.css'
         'vendor/select2/dist/css/select2.css'
     %}
